@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Ubuntu-Medium.ttf">
+            <string>Ubuntu-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Messages View Controller-->
+        <scene sceneID="7MM-of-jgj">
+            <objects>
+                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModule="MinionTranslator_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write message" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="11f-wU-5rc">
+                                <rect key="frame" x="16" y="20" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.98039215686274506" green="0.8784313725490196" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.12062183730000001" green="0.54010058800000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="light" returnKeyType="send"/>
+                                <connections>
+                                    <action selector="onKeyboardSend" destination="ObA-dk-sSI" eventType="editingDidEndOnExit" id="93r-hT-KcA"/>
+                                    <action selector="onTextFieldTouch" destination="ObA-dk-sSI" eventType="touchDown" id="Lvj-YB-7Ql"/>
+                                    <outlet property="delegate" destination="ObA-dk-sSI" id="UsZ-zW-XSZ"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="949-Le-3qI">
+                                <rect key="frame" x="272" y="20" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="send-button"/>
+                                <connections>
+                                    <action selector="onSendMessage" destination="ObA-dk-sSI" eventType="touchUpInside" id="mcZ-Je-e6i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXw-co-JLC">
+                                <rect key="frame" x="16" y="476" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="Tnd-l2-fil"/>
+                                    <constraint firstAttribute="width" constant="32" id="t98-Xq-XY6"/>
+                                </constraints>
+                                <state key="normal" image="info"/>
+                                <connections>
+                                    <segue destination="lPF-tv-Tlg" kind="show" id="NO0-kc-W4Q"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="minions-bg" translatesAutoresizingMaskIntoConstraints="NO" id="sFX-1J-fAu">
+                                <rect key="frame" x="62" y="451" width="196" height="137"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="196" id="AMe-u4-kl1"/>
+                                    <constraint firstAttribute="height" constant="137" id="fV8-py-Ed9"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25098039215686274" green="0.76862745098039209" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XXw-co-JLC" firstAttribute="leading" secondItem="qwl-6g-ghT" secondAttribute="leading" constant="16" id="20T-px-HHS"/>
+                            <constraint firstItem="sFX-1J-fAu" firstAttribute="bottom" secondItem="qwl-6g-ghT" secondAttribute="bottom" constant="60" id="8tz-XZ-gnR"/>
+                            <constraint firstItem="qwl-6g-ghT" firstAttribute="trailing" secondItem="sFX-1J-fAu" secondAttribute="trailing" constant="62" id="Dx8-Dp-v3F"/>
+                            <constraint firstItem="sFX-1J-fAu" firstAttribute="centerX" secondItem="qwl-6g-ghT" secondAttribute="centerX" id="DyF-l7-tXk"/>
+                            <constraint firstItem="qwl-6g-ghT" firstAttribute="bottom" secondItem="XXw-co-JLC" secondAttribute="bottom" constant="20" id="OGY-xa-O1Y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qwl-6g-ghT"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="528"/>
+                    <connections>
+                        <outlet property="messageTextField" destination="11f-wU-5rc" id="Fge-hf-wKr"/>
+                        <outlet property="sendButton" destination="949-Le-3qI" id="ldV-KV-OVU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.59999999999999" y="132.23388305847078"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="fB1-qn-1kc">
+            <objects>
+                <viewController storyboardIdentifier="AboutVC" title="About View Controller" id="lPF-tv-Tlg" customClass="MessagesViewController" customModule="MinionTranslator_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PHf-si-KjZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCC-y9-tL5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.8784313725490196" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.0" green="0.69019607839999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="1" green="0.93333333333333335" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="17"/>
+                                    <color key="textColor" red="0.0" green="0.69019607839999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="17"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="About" id="6hz-Bx-5fN">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="ufq-30-Ox5">
+                                            <connections>
+                                                <segue destination="Xen-h3-RSt" kind="unwind" unwindAction="goBackFromAboutView:" id="00O-qh-oD8"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Attribution" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4u-SE-agS">
+                                <rect key="frame" x="16" y="70" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25098039215686274" green="0.76862745098039209" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="ezi-FN-3eK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f7j-pS-qvY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Xen-h3-RSt" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="844" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="info" width="64" height="64"/>
+        <image name="minions-bg" width="415" height="386"/>
+        <image name="send-button" width="64" height="64"/>
+    </resources>
+</document>
